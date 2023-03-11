@@ -1,0 +1,18 @@
+
+        body{
+            padding: 48px 230px 48px 230px;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-rows: 1fr 1fr;
+justify-content: center;
+align-items: center; 
+gap: 30px;
+background: #E5E5E5;
+                }
+                  
+            section{
+                display: flex;
+                flex-wrap: wrap;
+            flex-direction: column;
+                background: #E5E5E5;
+            } 

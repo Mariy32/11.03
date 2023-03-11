@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- <div class="obolochka">  -->
+        <!-- <section> --> 
+            <!-- <img src="" alt="Картинка">
+            <div class="product_info">
+                
+                <h3 class="nameProduct">
+                </h3>
+                        <p class="textContent">
+                        </p>
+                <p class="price">
+                </p>
+    
+            </div> -->
+        <!-- </section>
+     </div>  -->
+    
+
+ <script src="data.js"></script> 
+ <script>
+    const data = JSON.parse(dataProduct);
+    data.forEach(element => {
+
+     const sectionEl = document.createElement("section");
+     sectionEl.classList.add(".product_item");
+     document.querySelector("body").appendChild(sectionEl);
+     
+     const imgEl = document.createElement("img");
+     imgEl.classList.add(".product_img");
+     imgEl.src = element.img;
+     sectionEl.appendChild(imgEl);
+
+     const divEl = document.createElement("div");
+     divEl.classList.add(".product_info");
+     sectionEl.appendChild(divEl);
+
+     const h3El = document.createElement("h3");
+     h3El.textContent = element.nameProduct;
+     divEl.appendChild(h3El);
+
+     const textEl = document.createElement("p");
+    textEl.textContent = element.textContent;
+    divEl.appendChild(textEl);
+
+     for (let i = 3; i < Object.keys(element).length; i++) {
+    const pEl = document.createElement("p");
+     pEl.textContent = `${Object.keys(element)[i]} : ${Object.values(element)[i]}`;
+     divEl.appendChild(pEl);
+     }
+    }); 
+
+ </script>  
+</body>
+</html>
